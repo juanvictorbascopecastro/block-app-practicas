@@ -126,7 +126,7 @@
                     class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                 ></li>
 
-                <!-- nav bar de extension --->
+                <!-- nav bar de extension -->
                 <li
                     class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                     :class="{
@@ -141,7 +141,7 @@
                         v-if="optionsExtension"
                         class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
                     >
-                        <!--opciones de menú -->
+                        <!-- opciones de menu -->
                         <a
                             href="#"
                             class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
