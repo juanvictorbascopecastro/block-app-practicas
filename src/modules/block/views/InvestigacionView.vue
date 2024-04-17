@@ -9,7 +9,7 @@
                         <h3 class="text-xl text-gray-800 font-semibold mb-3">
                             greek salad
                         </h3>
-                        <p class="mb-2">10 minutes to make</p>
+                        <p class="mb-2">10 minutes kajsnckasnce</p>
                         <p class="my-4">blah blah blah</p>
                         <button
                             class="text-lg font-semibold text-gray-700 bg-indigo-100 px-4 py-1 block mx-auto rounded-md"
