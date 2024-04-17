@@ -24,7 +24,6 @@ export default {
             name: 'servicios',
             component: () => import('../views/ServicesView.vue'),
         },
-
         {
             path: '/investigacion',
             name: 'investigacion',

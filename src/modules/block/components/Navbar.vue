@@ -25,39 +25,88 @@
         </h1>
 
         <!-- navigation -->
-        <nav class="nav font-semibold text-lg">
+        <nav class="nav font-semibold">
             <ul class="flex items-center">
                 <li
-                    class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
-                    :class="{
-                        'text-green-500 border-opacity-100':
-                            $route.name === 'inicio',
-                    }"
-                >
-                    <i class="bi bi-house-door-fill mr-3"></i>
-                    <router-link to="/">El Instituto</router-link>
-                </li>
-                <li
-                    class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+                    class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                     :class="{
                         ' text-green-500 border-opacity-100':
                             $route.name === 'infraestructura',
                     }"
+                    @mouseover="optionsInstituto = true"
+                    @mouseleave="optionsInstituto = false"
                 >
-                    <router-link :to="{ name: 'infraestructura' }"
-                        >Infraestructura</router-link
+                    <span class="block">El instituto</span>
+                    <div
+                        v-if="optionsInstituto"
+                        class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
                     >
+                        <!-- Aquí van tus opciones de menú -->
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Quienes somos</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Misión y visión</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Personal ICTA</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Contacto</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Portafolio de servicios</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Noticias</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Calidad</a
+                        >
+                    </div>
                 </li>
-
                 <li
-                    class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+                    class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                     :class="{
                         ' text-green-500 border-opacity-100':
-                            $route.name === 'servicios',
+                            $route.name === 'infraestructura',
                     }"
+                    @mouseover="optionsInfraestructura = true"
+                    @mouseleave="optionsInfraestructura = false"
                 >
-                    <router-link to="servicios">Investigacion</router-link>
+                    <span class="block">Infraestructura</span>
+                    <div
+                        v-if="optionsInfraestructura"
+                        class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
+                    >
+                        <!-- Aquí van tus opciones de menú -->
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Laboratorios</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Plantas</a
+                        >
+                    </div>
                 </li>
+
                 <li
                     class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                     :class="{
@@ -67,11 +116,7 @@
                 >
                     <router-link to="investigacion">Investigacion</router-link>
                 </li>
-                <li
-                    class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
-                >
-                    <Dropdowns />
-                </li>
+
                 <li
                     class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                 >
@@ -79,15 +124,7 @@
                 </li>
                 <li
                     class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
-                >
-                    <button
-                        class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-md"
-                    >
-                        <i class="bi bi-trash-fill mr-2"></i>
-
-                        Delete
-                    </button>
-                </li>
+                ></li>
             </ul>
         </nav>
 
@@ -110,6 +147,8 @@ import Dropdowns from './../components/Dropdowns.vue'
 export default {
     setup() {
         const isDark = ref(false)
+        const optionsInstituto = ref(false)
+        const optionsInfraestructura = ref(false)
         const modeDark = () => {
             const htmlElement = document.querySelector('html')
 
@@ -122,7 +161,7 @@ export default {
             }
         }
 
-        return { modeDark, isDark }
+        return { modeDark, isDark, optionsInstituto, optionsInfraestructura }
     },
     components: { Dropdowns },
 }
