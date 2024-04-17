@@ -108,15 +108,48 @@
                 </li>
 
                 <li
-                    class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+                    class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                     :class="{
                         ' text-green-500 border-opacity-100':
                             $route.name === 'investigacion',
                     }"
+                    @mouseover="optionsInvestigacion = true"
+                    @mouseleave="optionsInvestigacion = false"
                 >
-                    <router-link to="investigacion">Investigacion</router-link>
+                    <span class="block">Investigacion</span>
+                    <div
+                        v-if="optionsInvestigacion"
+                        class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
+                    >
+                        <!-- Aquí van tus opciones de menú -->
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Laboratorios</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Plantas</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Publicaciones</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Proyectos</a
+                        >
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                            >Participacion de eventos</a
+                        >
+                    </div>
                 </li>
-
+                
                 <li
                     class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                 >
@@ -149,6 +182,7 @@ export default {
         const isDark = ref(false)
         const optionsInstituto = ref(false)
         const optionsInfraestructura = ref(false)
+        const optionsInvestigacion = ref(false)
         const modeDark = () => {
             const htmlElement = document.querySelector('html')
 
@@ -161,7 +195,7 @@ export default {
             }
         }
 
-        return { modeDark, isDark, optionsInstituto, optionsInfraestructura }
+        return { modeDark, isDark, optionsInstituto, optionsInfraestructura, optionsInvestigacion }
     },
     components: { Dropdowns },
 }
