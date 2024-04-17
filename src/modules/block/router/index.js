@@ -29,5 +29,10 @@ export default {
             name: 'investigacion',
             component: () => import('../views/InvestigacionView.vue'),
         },
+        {
+            path: '/extension',
+            name: 'extension',
+            component: () => import('../views/ExtensionView.vue'),
+        },
     ],
 }
