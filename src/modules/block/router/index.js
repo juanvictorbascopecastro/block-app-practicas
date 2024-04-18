@@ -20,11 +20,6 @@ export default {
             component: () => import('../views/InfraestructuraView.vue'),
         },
         {
-            path: '/servicios',
-            name: 'servicios',
-            component: () => import('../views/ServicesView.vue'),
-        },
-        {
             path: '/investigacion',
             name: 'investigacion',
             component: () => import('../views/InvestigacionView.vue'),
