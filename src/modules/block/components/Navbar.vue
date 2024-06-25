@@ -41,7 +41,7 @@
                             v-if="optionsOrganizacion"
                             class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
                         >
-                            <a
+                            <!-- <a
                                 href="#"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
@@ -52,7 +52,7 @@
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
                                 Plantas
-                            </a>
+                            </a> -->
                             <a
                                 href="#"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
