@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: '/ita',
+    base: 'https://juanvictorbascopecastro.github.io/block-app-practicas',
     define: {
         'process.env': process.env,
     },
