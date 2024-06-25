@@ -1,7 +1,7 @@
 <template>
     <div class="flex sm:justify-center space-x-3 lg:flex xl:flex">
         <a
-            href="https://www.facebook.com/SistemasIO"
+            href="https://www.facebook.com"
             target="_blank"
             class="text-gray-400 dark:hover:text-gray-50 hover:text-gray-900"
         >
@@ -20,7 +20,7 @@
         </a>
 
         <a
-            href="https://www.instagram.com/Sistemas_io"
+            href="https://www.instagram.com"
             target="_blank"
             class="text-gray-400 dark:hover:text-gray-50 hover:text-gray-900"
         >
@@ -38,7 +38,7 @@
             </svg>
         </a>
         <a
-            href="https://twitter.com/sistemas_io"
+            href="https://twitter.com"
             target="_blank"
             class="text-gray-400 dark:hover:text-gray-50 hover:text-gray-900"
         >
@@ -54,7 +54,7 @@
             </svg>
         </a>
         <a
-            href="mailto:business@iooxs.com"
+            href="mailto:juan.victor.bascope.castro@iooxs.com"
             target="_blank"
             class="text-gray-400 dark:hover:text-gray-50 hover:text-gray-900"
         >
@@ -77,7 +77,7 @@
         </a>
 
         <a
-            href="tel:68660443"
+            href="tel:72874590"
             target="_blank"
             class="text-gray-400 dark:hover:text-gray-50 hover:text-gray-900"
         >

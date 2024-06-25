@@ -21,16 +21,16 @@
                 <ul class="flex items-center">
                     <li>
                         <router-link
-                            class="relative p-4 px-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+                            class="relative p-4 px-4 border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-500 duration-200 cursor-pointer"
                             :to="{ name: 'inicio' }"
                         >
                             Inicio
                         </router-link>
                     </li>
                     <li
-                        class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+                        class="relative p-4 border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-500 duration-200 cursor-pointer"
                         :class="{
-                            ' text-green-500 border-opacity-100':
+                            ' text-blue-500 border-opacity-100':
                                 $route.name === 'organizacion',
                         }"
                         @mouseover="optionsOrganizacion = true"
@@ -43,40 +43,40 @@
                         >
                             <a
                                 href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
                                 Laboratorios
                             </a>
                             <a
                                 href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
                                 Plantas
                             </a>
                             <a
                                 href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
                                 Publicaciones
                             </a>
                             <a
                                 href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
                                 Proyectos
                             </a>
                             <a
                                 href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
                                 Participación en eventos
                             </a>
                         </div>
                     </li>
                     <li
-                        class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+                        class="relative p-4 border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-500 duration-200 cursor-pointer"
                         :class="{
-                            ' text-green-500 border-opacity-100':
+                            ' text-blue-500 border-opacity-100':
                                 $route.name === 'infraestructura',
                         }"
                         @mouseover="optionsLab = true"
@@ -89,23 +89,25 @@
                         >
                             <router-link
                                 :to="{ name: 'laboratorios' }"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
                                 Laboratorios
                             </router-link>
                             <router-link
                                 :to="{ name: 'plantas' }"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
+                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
                             >
                                 Plantas
                             </router-link>
                         </div>
                     </li>
                     <li
-                        class="p-4 px-2 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+                        class="p-4 px-2 border-b-2 border-blue-500 border-opacity-0 hover:border-opacity-100 hover:text-blue-500 duration-200 cursor-pointer"
                         style="white-space: nowrap"
                     >
-                        <router-link to="404">Quiénes Somos</router-link>
+                        <router-link :to="{ name: 'quienes-somos' }"
+                            >Quiénes Somos</router-link
+                        >
                     </li>
                 </ul>
             </nav>
@@ -145,27 +147,27 @@
             <div class="flex flex-col">
                 <router-link
                     to="/"
-                    class="text-sm font-semibold hover:text-green-500 py-2"
+                    class="text-sm font-semibold hover:text-blue-500 py-2"
                     :class="{
-                        ' text-green-500': $route.name === 'inicio',
+                        ' text-blue-500': $route.name === 'inicio',
                     }"
                 >
                     Inicio
                 </router-link>
                 <button
-                    class="text-sm font-semibold hover:text-green-500 py-2 text-left"
+                    class="text-sm font-semibold hover:text-blue-500 py-2 text-left"
                 >
                     <i class="bi bi-cash-stack mr-1"></i>
                     Organización
                 </button>
                 <button
-                    class="text-sm font-semibold hover:text-green-500 py-2 text-left"
+                    class="text-sm font-semibold hover:text-blue-500 py-2 text-left"
                 >
                     <i class="bi bi-bank mr-1"></i>
                     Laboratorios
                 </button>
                 <button
-                    class="text-sm font-semibold hover:text-green-500 py-2 text-left"
+                    class="text-sm font-semibold hover:text-blue-500 py-2 text-left"
                 >
                     <i class="bi bi-telephone-fill mr-1"></i>
                     Quiénes Somos
