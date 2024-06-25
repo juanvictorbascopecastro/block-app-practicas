@@ -88,6 +88,12 @@
                     </div>
                 </div>
             </div>
+            <div class="w-full text-center">
+                <img
+                    src="./../../../assets/logo_ita.jpg"
+                    class="rounded-xl mx-auto w-80"
+                />
+            </div>
 
             <div class="flex flex-wrap items-center mt-32">
                 <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
