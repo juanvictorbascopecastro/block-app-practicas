@@ -1,7 +1,7 @@
 <template>
     <div class="fixed w-full z-20">
         <header
-            class="header top-0 bg-white dark:bg-gray-900 shadow-md flex items-center justify-between px-4 md:px-8 py-02"
+            class="header top-0 bg-white dark:bg-gray-900 shadow-md flex items-center justify-between px-4 md:px-8 py-2"
         >
             <h1 class="w-3/12">
                 <a href="" class="flex items-center">
@@ -11,71 +11,66 @@
                     />
                     <span
                         class="text-center dark:text-white text-gray-900 font-bold text-4xl"
-                        >USFX</span
                     >
+                        ITA
+                    </span>
                 </a>
             </h1>
 
             <nav class="nav font-semibold hidden lg:flex">
                 <ul class="flex items-center">
                     <li>
-                        <button
+                        <router-link
                             class="relative p-4 px-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
-                            @click="scrollToSection('inicio')"
+                            :to="{ name: 'inicio' }"
                         >
                             Inicio
-                        </button>
+                        </router-link>
                     </li>
                     <li
-                        class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer whitespace-nowrap"
+                        class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
                         :class="{
                             ' text-green-500 border-opacity-100':
-                                $route.name === 'infraestructura',
+                                $route.name === 'organizacion',
                         }"
-                        @mouseover="optionsInstituto = true"
-                        @mouseleave="optionsInstituto = false"
+                        @mouseover="optionsOrganizacion = true"
+                        @mouseleave="optionsOrganizacion = false"
                     >
-                        <span class="block">El instituto</span>
+                        <span class="block">Organización</span>
                         <div
-                            v-if="optionsInstituto"
+                            v-if="optionsOrganizacion"
                             class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
                         >
-                            <!-- Aquí van tus opciones de menú -->
                             <a
                                 href="#"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Quienes somos</a
                             >
+                                Laboratorios
+                            </a>
                             <a
                                 href="#"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Misión y visión</a
                             >
+                                Plantas
+                            </a>
                             <a
                                 href="#"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Personal ICTA</a
                             >
+                                Publicaciones
+                            </a>
                             <a
                                 href="#"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Contacto</a
                             >
+                                Proyectos
+                            </a>
                             <a
                                 href="#"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Portafolio de servicios</a
                             >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Noticias</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Calidad</a
-                            >
+                                Participación en eventos
+                            </a>
                         </div>
                     </li>
                     <li
@@ -84,141 +79,34 @@
                             ' text-green-500 border-opacity-100':
                                 $route.name === 'infraestructura',
                         }"
-                        @mouseover="optionsInfraestructura = true"
-                        @mouseleave="optionsInfraestructura = false"
+                        @mouseover="optionsLab = true"
+                        @mouseleave="optionsLab = false"
                     >
-                        <span class="block">Infraestructura</span>
+                        <span class="block">Laboratorios</span>
                         <div
-                            v-if="optionsInfraestructura"
+                            v-if="optionsLab"
                             class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
                         >
-                            <!-- Aquí van tus opciones de menú -->
-                            <a
-                                href="#"
+                            <router-link
+                                :to="{ name: 'laboratorios' }"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Laboratorios</a
                             >
-                            <a
-                                href="#"
+                                Laboratorios
+                            </router-link>
+                            <router-link
+                                :to="{ name: 'plantas' }"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Plantas</a
                             >
+                                Plantas
+                            </router-link>
                         </div>
                     </li>
                     <li
-                        class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
-                        :class="{
-                            ' text-green-500 border-opacity-100':
-                                $route.name === 'investigacion',
-                        }"
-                        @mouseover="optionsInvestigacion = true"
-                        @mouseleave="optionsInvestigacion = false"
+                        class="p-4 px-2 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
+                        style="white-space: nowrap"
                     >
-                        <span class="block">Investigacion</span>
-                        <div
-                            v-if="optionsInvestigacion"
-                            class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
-                        >
-                            <!-- Aquí van tus opciones de menú -->
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Laboratorios</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Plantas</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Publicaciones</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Proyectos</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Participacion de eventos</a
-                            >
-                        </div>
+                        <router-link to="404">Quiénes Somos</router-link>
                     </li>
-
-                    <li
-                        class="relative p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
-                        :class="{
-                            ' text-green-500 border-opacity-100':
-                                $route.name === 'sedes',
-                        }"
-                        @mouseover="optionsSedes = true"
-                        @mouseleave="optionsSedes = false"
-                    >
-                        <span class="block">SEDES</span>
-                        <div
-                            v-if="optionsSedes"
-                            class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
-                        >
-                            <!-- Aquí van tus opciones de menú -->
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Amazonia</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Bogotá</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Caribe</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >De La Paz</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Manizales</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Medellín</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Orinoquia</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Palmira</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-green-500 hover:text-green-500"
-                                >Tumaco</a
-                            >
-                        </div>
-                    </li>
-
-                    <li
-                        class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
-                    >
-                        <router-link to="404">404</router-link>
-                    </li>
-                    <li
-                        class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer"
-                    ></li>
                 </ul>
             </nav>
 
@@ -241,16 +129,62 @@
                 >
                     <i class="bi bi-list text-xl"></i>
                 </button>
+                <router-link
+                    to="/login"
+                    class="bg-blue-500 px-3 ml-1 py-1.5 text-white items-center space-x-2 rounded focus:bg-blue-600 hidden lg:inline-block whitespace-nowrap"
+                >
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Iniciar sesión</span>
+                </router-link>
             </div>
         </header>
         <div
             class="absolute top-full left-0 mt-0 z-30 lg:hidden w-full bg-white dark:bg-gray-900 border-t-2 py-2 px-3 text-gray-800 dark:text-gray-200"
             v-show="showMobileMenu"
         >
-            <div class="flex flex-col"></div>
+            <div class="flex flex-col">
+                <router-link
+                    to="/"
+                    class="text-sm font-semibold hover:text-green-500 py-2"
+                    :class="{
+                        ' text-green-500': $route.name === 'inicio',
+                    }"
+                >
+                    Inicio
+                </router-link>
+                <button
+                    class="text-sm font-semibold hover:text-green-500 py-2 text-left"
+                >
+                    <i class="bi bi-cash-stack mr-1"></i>
+                    Organización
+                </button>
+                <button
+                    class="text-sm font-semibold hover:text-green-500 py-2 text-left"
+                >
+                    <i class="bi bi-bank mr-1"></i>
+                    Laboratorios
+                </button>
+                <button
+                    class="text-sm font-semibold hover:text-green-500 py-2 text-left"
+                >
+                    <i class="bi bi-telephone-fill mr-1"></i>
+                    Quiénes Somos
+                </button>
+                <div class="flex justify-between items-center border-t-2 pt-2">
+                    <Social />
+                    <router-link
+                        to="/login"
+                        class="bg-blue-500 px-3 py-1.5 text-white inline-flex items-center space-x-2 rounded focus:bg-blue-600"
+                    >
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        <span>Iniciar sesión</span>
+                    </router-link>
+                </div>
+            </div>
         </div>
     </div>
 </template>
+
 <script>
 import { ref } from 'vue'
 import Dropdowns from './../components/Dropdowns.vue'
@@ -261,13 +195,10 @@ import myNavbar from '../composables/navbar'
 export default {
     setup() {
         const isDark = ref(false)
-        const optionsInstituto = ref(false)
-        const optionsInfraestructura = ref(false)
-        const optionsInvestigacion = ref(false)
-        const optionsSedes = ref(false)
+        const optionsLab = ref(false)
+        const optionsOrganizacion = ref(false)
 
         const { modeDark } = myApp()
-
         const { scrollToSection, showMenuPlanes, showMobileMenu } = myNavbar()
 
         return {
@@ -276,10 +207,8 @@ export default {
             showMenuPlanes,
             showMobileMenu,
             scrollToSection,
-            optionsInstituto,
-            optionsInfraestructura,
-            optionsInvestigacion,
-            optionsSedes,
+            optionsLab,
+            optionsOrganizacion,
         }
     },
     components: { Dropdowns, Social },

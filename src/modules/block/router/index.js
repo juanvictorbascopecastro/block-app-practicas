@@ -15,9 +15,19 @@ export default {
             component: () => import('../views/HomeView.vue'),
         },
         {
-            path: '/infraestructura',
-            name: 'infraestructura',
-            component: () => import('../views/InfraestructuraView.vue'),
+            path: '/laboratorios',
+            name: 'laboratorios',
+            component: () => import('../views/LaboratorioView.vue'),
+        },
+        {
+            path: '/plantas',
+            name: 'plantas',
+            component: () => import('../views/PlantasView.vue'),
+        },
+        {
+            path: '/quienes-somos',
+            name: 'quienes-somos',
+            component: () => import('../views/QuienesSomosView.vue'),
         },
         {
             path: '/investigacion',
