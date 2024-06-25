@@ -194,11 +194,10 @@ import myNavbar from '../composables/navbar'
 
 export default {
     setup() {
-        const isDark = ref(false)
         const optionsLab = ref(false)
         const optionsOrganizacion = ref(false)
 
-        const { modeDark } = myApp()
+        const { modeDark, isDark } = myApp()
         const { scrollToSection, showMenuPlanes, showMobileMenu } = myNavbar()
 
         return {
