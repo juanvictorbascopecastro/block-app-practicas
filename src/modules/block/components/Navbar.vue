@@ -41,18 +41,6 @@
                             v-if="optionsOrganizacion"
                             class="absolute top-full left-0 mt-0 bg-white dark:bg-[#1A2238] shadow-md rounded border border-gray-300 dark:border-[#121726] text-white text-sm z-30 whitespace-nowrap"
                         >
-                            <!-- <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
-                            >
-                                Laboratorios
-                            </a>
-                            <a
-                                href="#"
-                                class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
-                            >
-                                Plantas
-                            </a> -->
                             <a
                                 href="#"
                                 class="block px-4 py-2 text-gray-500 dark:text-gray-400 dark:hover:text-blue-500 hover:text-blue-500"
@@ -146,7 +134,7 @@
         >
             <div class="flex flex-col">
                 <router-link
-                    to="/"
+                    :to="{ name: 'inicio' }"
                     class="text-sm font-semibold hover:text-blue-500 py-2"
                     :class="{
                         ' text-blue-500': $route.name === 'inicio',
@@ -157,21 +145,30 @@
                 <button
                     class="text-sm font-semibold hover:text-blue-500 py-2 text-left"
                 >
-                    <i class="bi bi-cash-stack mr-1"></i>
+                    <i class="bi bi-bank mr-1"></i>
                     Organización
                 </button>
-                <button
+                <router-link
                     class="text-sm font-semibold hover:text-blue-500 py-2 text-left"
+                    :to="{ name: 'laboratorios' }"
                 >
-                    <i class="bi bi-bank mr-1"></i>
+                    <i class="bi bi-thermometer-sun mr-1"></i>
                     Laboratorios
-                </button>
-                <button
+                </router-link>
+                <router-link
                     class="text-sm font-semibold hover:text-blue-500 py-2 text-left"
+                    :to="{ name: 'plantas' }"
                 >
-                    <i class="bi bi-telephone-fill mr-1"></i>
+                    <i class="bi bi-clipboard-fill mr-1"></i>
+                    Plantas
+                </router-link>
+                <router-link
+                    class="text-sm font-semibold hover:text-blue-500 py-2 text-left"
+                    :to="{ name: 'quienes-somos' }"
+                >
+                    <i class="bi bi-info-circle-fill mr-1"></i>
                     Quiénes Somos
-                </button>
+                </router-link>
                 <div class="flex justify-between items-center border-t-2 pt-2">
                     <Social />
                     <router-link
